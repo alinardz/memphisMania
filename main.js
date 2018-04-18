@@ -1,6 +1,22 @@
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 
+//cambiar colores boton cada segundo
+var boton = document.getElementsByTagName("button");
+var isBlue = false;
+
+function buttonColor() {
+    setInterval(function() {
+        button.classList.toggle("color-button");
+    }, 500);
+}
+
+buttonColor();
+
+var oldies = [];
+var memphis = [];
+
+
 function Board(image) {
     this.x = 0;
     this.y = 0;
@@ -145,6 +161,20 @@ function checkCollision() {
     });
 }
 
+function screenOver() {
+    this.img = new Image();
+    this.img.src = "assets/coolness.png";
+
+    this.img.onload = function() {
+        this.draw();
+    }.bind(this);
+
+    this.draw = function() {
+        ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+    }
+}
+
+var screenOver;
 
 function gameOver() {
     stop();
@@ -192,8 +222,21 @@ function stop() {
 const button = document.getElementById("start-button");
 button.addEventListener("click", function() {
     startGame();
-    button.remove();
+    //cambiar boton al dar clic
+    button.classList.toggle("restart-button");
+    button.textContent = "Restart";
+    //button.classList.add("restart-button");
+
+    //button.remove();
     //*** crear boton restart;
+});
+
+button.addEventListener("mouseover", function() {
+    button.classList.toggle("hover-button");
+});
+
+button.addEventListener("mouseout", function() {
+    button.classList.toggle("hover-button");
 });
 
 addEventListener("keydown", function(e) {
