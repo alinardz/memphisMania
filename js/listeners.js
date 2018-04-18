@@ -1,13 +1,8 @@
 const button = document.getElementById("start-button");
 button.addEventListener("click", function() {
     startGame();
-    //cambiar boton al dar clic
     button.classList.toggle("restart-button");
     button.textContent = "Restart";
-    //button.classList.add("restart-button");
-
-    //button.remove();
-    //*** crear boton restart;
 });
 
 button.addEventListener("mouseover", function() {
@@ -18,6 +13,8 @@ button.addEventListener("mouseout", function() {
     button.classList.toggle("hover-button");
 });
 
+
+//MOVIMIENTOS COCHE
 addEventListener("keydown", function(e) {
     if (e.keyCode === 40) {
         coche1.moveDown();

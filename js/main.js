@@ -1,6 +1,5 @@
 function gameOver() {
     stop();
-    sreenOver.draw();
     //dibujar score final
     //drawFinalScore();
 }
@@ -10,13 +9,12 @@ function gameOver() {
 function update() {
     generateObjects();
     frames++;
-    //console.log(frames);
-    //va creando y borrando, cambiando x & y
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     board.draw();
     coche1.draw();
-    drawObjects();
+
     coolness.draw();
+    drawObjects();
     checkCollision();
 }
 
@@ -30,8 +28,9 @@ function startGame() {
     //HAZ UNA FUNCIÓN APARTE PARA RESETEAR TODO******
     coche1.y = 200;
     objects = [];
+
     frames = 0;
-    board.music.play();
+    //board.music.play();
 }
 
 function stop() {
