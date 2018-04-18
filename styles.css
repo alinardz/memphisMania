@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Caveat:400,700&subset=latin-ext');
+body {
+    margin: 0;
+    background-image: url("assets/bg.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 700px;
+}
+
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
+
+.logo img {
+    width: 300px;
+}
+
+button {
+    background-color: #a3ffe6;
+    color: yellow;
+    text-shadow: -1px 0 #ff68f7, 0 3px #ff68f7, 3px 0 #ff68f7, 0 -1px #ff68f7;
+    box-shadow: 5px 8px #ebc9ff;
+    border-radius: 10px;
+    letter-spacing: 5px;
+    font-family: 'Caveat', cursive;
+    border: none;
+    font-size: 35px;
+    height: 55px;
+    width: 180px;
+}
+
+button:hover {
+    background-color: #a3ffe6;
+    color: #ff68f7;
+}
+
+.logo {
+    float: left;
+    width: 31%;
+    padding: 15px 0 0 25%;
+}
+
+.boton {
+    float: left;
+    width: 40%;
+    padding: 80px 0px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.canvas {
+    margin: 20px 10%;
+}
