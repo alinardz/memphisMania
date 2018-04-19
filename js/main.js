@@ -55,7 +55,7 @@ function checkCollision() {
 
 function checkCollisionMemphis() {
     arrMemphis.forEach(function(memphis) {
-        if (coche1.isTouching(memphiso)) {
+        if (coche1.isTouching(memphis)) {
             coolnessBar1 += .1;
         }
         console.log("estoy chocando con un memphis  mi coolness es:" +
