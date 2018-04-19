@@ -36,6 +36,15 @@ function checkCollision() {
     });
 }
 
+function checkJumping() {
+    if (coche1.y >= 200) {
+        isJumping = false;
+    }
+    if (isJumping) {
+        coche1.y += 1.5;
+    }
+}
+
 //GENERAR OBJETOS MEMPHIS
 function generateMemphisObject() {
     if (!(frames % 300 === 0)) return;

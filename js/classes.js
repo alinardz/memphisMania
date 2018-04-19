@@ -24,6 +24,8 @@
      }
  }
 
+
+
  //COOLNESS
  function Coolness() {
      this.x = 0;
@@ -45,8 +47,8 @@
  function Coche(image) {
      this.x = 20;
      this.y = 200;
-     this.width = 288;
-     this.height = 110;
+     this.width = 250;
+     this.height = 95;
 
      this.velX = 0;
      this.velY = 0;
@@ -68,7 +70,7 @@
      //MOVIMIENTOS
      this.forward = function() {
          if (this.x < canvas.width - this.width) {
-             this.x += 10;
+             this.x += 20;
          }
 
      }
@@ -117,7 +119,7 @@
      this.img = new Image();
      this.img.src = image;
      this.draw = function() {
-         this.x--;
+         this.x -= 4;
          ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
      }
 

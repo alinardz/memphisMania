@@ -16,13 +16,7 @@ function update() {
     drawObjects();
     checkCollision();
     checkCollisionMemphis();
-    if (coche1.y >= 200) {
-        isJumping = false;
-    }
-    if (isJumping) {
-        coche1.y += 1.5;
-    }
-
+    checkJumping();
 
 }
 
@@ -55,9 +49,11 @@ function checkCollision() {
             coolnessBar1 -= 2;
             arrOldies.splice(oindex, 1);
         }
-        console.log("estoy chocando con un oldieee mi coolness es:" +
-            coolnessBar1);
     });
+    if (coolnessBar1 <= 0) {
+        gameOver();
+        cosole.log("perdiste krnal");
+    }
 }
 
 function checkCollisionMemphis() {
@@ -66,7 +62,5 @@ function checkCollisionMemphis() {
             coolnessBar1 += 1;
             arrMemphis.splice(mindex, 1);
         }
-        console.log("estoy chocando con un memphis  mi coolness es:" +
-            coolnessBar1);
     });
 }
