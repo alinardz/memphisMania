@@ -25,20 +25,19 @@
  }
 
  //COOLNESS
- function Coolness(image) {
+ function Coolness() {
      this.x = 0;
      this.y = 0;
      this.width = canvas.width;
      this.height = canvas.height;
-     this.img = new Image();
-     this.img.src = image;
-
-     this.img.onload = function() {
-         this.draw();
-     }.bind(this);
 
      this.draw = function() {
-         ctx.drawImage(this.img, 150, 10, 150, 40);
+         this.coolnessEscrito = "Coolness : " + Math.floor(coolnessBar1);
+         ctx.fillStyle = 'white';
+         ctx.strokeStyle = 'blue';
+         ctx.font = "50px Caveat";
+         ctx.fillText(this.coolnessEscrito, 60, this.y + 50);
+         ctx.stroke();
      }
  }
 
@@ -48,6 +47,7 @@
      this.y = 200;
      this.width = 288;
      this.height = 110;
+
      this.velX = 0;
      this.velY = 0;
      this.speed = 5;
@@ -74,8 +74,9 @@
      }
 
      this.back = function() {
-         if (this.x > canvas.width - this.width)
+         if (this.x > 0) {
              this.x -= 10;
+         }
      }
 
      this.jump = function() {
@@ -101,10 +102,11 @@
              (this.y < object.y + object.height) &&
              (this.y + (this.height - 50) > object.y);
      }
+
  }
 
  //OBJETOS MALOS
- function Object(x, y, width, image) {
+ function OldieObject(x, y, width, image) {
      this.x = x;
      this.y = y;
      this.height = 50;
@@ -115,14 +117,18 @@
          this.x--;
          ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
      }
+
+     this.delete = function() {
+
+     }
  }
 
  //OBJETOS MEMPHIS
- function Memphis(x, y, image) {
+ function MemphisObject(x, y, width, image) {
      this.x = x;
      this.y = y;
-     this.width = width;
      this.height = 50;
+     this.width = width;
      this.img = new Image();
      this.img.src = image;
      this.draw = function() {

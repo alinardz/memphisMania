@@ -13,7 +13,11 @@ var memphis = ["assets/objects/memphis1.png", "assets/objects/memphis2.png", "as
 var board = new Board("assets/escenario.png");
 
 var coche1 = new Coche("assets/coche1.png");
-var coolness = new Coolness("assets/coolness.png");
+var coolness = new Coolness();
 var intervalo;
 var frames = 0;
-var objects = [];
+var arrOldies = [];
+var arrMemphis = [];
+
+var coolnessBar1 = 5;
+var coolnessBar2 = 5;
