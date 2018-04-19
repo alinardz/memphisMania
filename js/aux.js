@@ -36,14 +36,6 @@ function checkCollision() {
     });
 }
 
-function checkCollisionMemphis() {
-    arrMemphis(function(object) {
-        if (coche1.isTouching(object))
-            console.log("chocando con un memphis, mis puntos son: " + coolnessBar1)
-    });
-
-}
-
 //GENERAR OBJETOS MEMPHIS
 function generateMemphisObject() {
     if (!(frames % 300 === 0)) return;
@@ -61,20 +53,10 @@ function drawMemphisObjects() {
     });
 }
 
-function checkCollision() {
-    //verifica si el pajarín está tocando cada pipe
-    arrOldies.forEach(function(oldie) {
-        if (coche1.isTouching(oldie)) {
-            coolnessBar1 -= .1;
-        }
-        console.log("estoy chocando con un oldieee mi coolness es:" +
-            coolnessBar1);
+function checkCollisionMemphis() {
+    arrMemphis(function(object) {
+        if (coche1.isTouching(object))
+            console.log("chocando con un memphis, mis puntos son: " + coolnessBar1)
     });
-    arrOldies.forEach(function(oldie) {
-        if (coche1.isTouching(oldie)) {
-            coolnessBar1 -= .1;
-        }
-        console.log("estoy chocando con un oldieee mi coolness es:" +
-            coolnessBar1);
-    });
+
 }

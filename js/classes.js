@@ -68,7 +68,7 @@
      //MOVIMIENTOS
      this.forward = function() {
          if (this.x < canvas.width - this.width) {
-             this.x += 7;
+             this.x += 10;
          }
 
      }
@@ -80,8 +80,11 @@
      }
 
      this.jump = function() {
-         if (this.y > 0)
+         if (this.y > 0) {
              this.y -= 50;
+             isJumping = true;
+         }
+
      }
 
      this.moveDown = function() {
@@ -92,7 +95,7 @@
      }
 
      this.moveUp = function() {
-         if (this.y > 0)
+         if (this.y > 130)
              this.y -= 10;
      }
 

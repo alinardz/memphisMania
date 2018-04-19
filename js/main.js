@@ -16,6 +16,12 @@ function update() {
     drawObjects();
     checkCollision();
     checkCollisionMemphis();
+    if (coche1.y >= 200) {
+        isJumping = false;
+    }
+    if (isJumping) {
+        coche1.y += 1.5;
+    }
 
 
 }
@@ -44,9 +50,10 @@ function stop() {
 }
 
 function checkCollision() {
-    arrOldies.forEach(function(oldie) {
+    arrOldies.forEach(function(oldie, oindex) {
         if (coche1.isTouching(oldie)) {
-            coolnessBar1 -= .1;
+            coolnessBar1 -= 2;
+            arrOldies.splice(oindex, 1);
         }
         console.log("estoy chocando con un oldieee mi coolness es:" +
             coolnessBar1);
@@ -54,9 +61,10 @@ function checkCollision() {
 }
 
 function checkCollisionMemphis() {
-    arrMemphis.forEach(function(memphis) {
+    arrMemphis.forEach(function(memphis, mindex) {
         if (coche1.isTouching(memphis)) {
-            coolnessBar1 += .1;
+            coolnessBar1 += 1;
+            arrMemphis.splice(mindex, 1);
         }
         console.log("estoy chocando con un memphis  mi coolness es:" +
             coolnessBar1);

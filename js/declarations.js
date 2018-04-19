@@ -21,3 +21,5 @@ var arrMemphis = [];
 
 var coolnessBar1 = 5;
 var coolnessBar2 = 5;
+
+var isJumping = false;
