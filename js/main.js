@@ -16,7 +16,8 @@ function resultado1() {
             update();
         }, 1000 / 60); //60fps 
     }, 4000);
-
+    var arrOldies = [];
+    var arrMemphis = [];
 
     //set bg 2
     coche2.x = 10;
