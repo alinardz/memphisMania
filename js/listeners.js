@@ -15,6 +15,7 @@ button.addEventListener("mouseout", function() {
 
 
 //MOVIMIENTOS COCHE
+//TRATAR CON CASE
 addEventListener("keydown", function(e) {
     if (e.keyCode === 40) {
         coche1.moveDown();

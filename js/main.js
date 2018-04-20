@@ -1,6 +1,7 @@
 //GENERAR GAME OVER
 function game2() {
     stop();
+    coche1.width = 0;
     if (siguiente === false) {
         this.next.draw();
     }
@@ -17,6 +18,7 @@ function game2() {
 
 function final() {
     stop();
+    next.draw();
     //dibujar score final
     //drawFinalScore();
 }
@@ -121,7 +123,7 @@ function checkCollision2() {
     });
     if (coolnessBar2 <= 0) {
         //end
-        console.log("ajua terminamos")
+        final();
     }
 }
 
