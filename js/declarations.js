@@ -9,8 +9,11 @@ var frames = 0;
 
 //ARCHIVOS
 var audio = ["assets/spin.mp3"];
-var oldies = ["assets/objects/oldie1.png", "assets/objects/oldie2.png", "assets/objects/oldie3.png"];
-var memphis = ["assets/objects/memphis1.png", "assets/objects/memphis2.png", "assets/objects/memphis3.png"];
+var oldies = ["assets/objects/oldie1.png", "assets/objects/oldie2.png"];
+var sodas = ["assets/objects/memphis1.png", "assets/objects/memphis6.png", "assets/objects/memphis7.png"];
+var videos = ["assets/objects/memphis2.png", "assets/objects/memphis4.png", "assets/objects/memphis5.png"];
+var cuadros = ["assets/objects/memphis3.png", "assets/objects/memphis8.png", "assets/objects/memphis9.png"];
+
 var coolnessImg = ["assets/coolness9.png", "assets/coolness8.png", "assets/coolness7.png", "assets/coolness6.png", "assets/coolness5.png", "assets/coolness4.png", "assets/coolness3.png", "assets/coolness2.png", "assets/coolness1.png", "assets/coolness0.png"]
 
 //NUEVOS OBJETOS

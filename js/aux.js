@@ -11,10 +11,10 @@ buttonColor();
 function generateObjects() {
     if (!(frames % 100 === 0)) return;
     var randomX = Math.floor(Math.random() * 200) + 600;
-    var randomY = Math.floor(Math.random() * 200) + 40;
+    var randomY = Math.floor(Math.random() * 200) + 70;
     var image = oldies[Math.floor(Math.random() * oldies.length)];
 
-    var width = image === "assets/objects/oldie1.png" ? 145 : "assets/objects/oldie2.png" ? 100 : "assets/objects/oldie3.png" ? 50 : 50;
+    var width = image === "assets/objects/oldie1.png" ? 145 : "assets/objects/oldie2.png" ? 100 : "" ? 50 : 50;
 
     var oldieObject = new OldieObject(randomX, randomY, width, image);
     arrOldies.push(oldieObject);
@@ -45,13 +45,23 @@ function checkJumping() {
 
 //GENERAR OBJETOS BUENOS
 function generateMemphisObject() {
-    if (!(frames % 150 === 0)) return;
-    var randomX = Math.floor(Math.random() * 200) + 900;
-    var randomY = Math.floor(Math.random() * 200) + 10;
-    var image = memphis[Math.floor(Math.random() * memphis.length)];
-    var width = image === "assets/objects/memphis1.png" ? 23 : "assets/objects/memphis2.png" ? 117 : "assets/objects/memphis3.png" ? 50 : 23;
-    var memphisObject = new MemphisObject(randomX, randomY, width, image);
-    arrMemphis.push(memphisObject);
+    if (!(frames % 300 === 0)) return;
+    var randomXS = Math.floor(Math.random() * 200) + 900;
+    var randomYS = Math.floor(Math.random() * 300) + 10;
+    var randomXC = Math.floor(Math.random() * 200) + 500;
+    var randomYC = Math.floor(Math.random() * 300) + 10;
+    var randomXV = Math.floor(Math.random() * 200) + 600;
+    var randomYV = Math.floor(Math.random() * 300) + 10;
+    var sodaI = sodas[Math.floor(Math.random() * sodas.length)];
+    var videoI = videos[Math.floor(Math.random() * videos.length)];
+    var cuadroI = cuadros[Math.floor(Math.random() * cuadros.length)];
+    //var width = image === "assets/objects/memphis1.png" ? 23 : "assets/objects/memphis2.png" ? 117 : "assets/objects/memphis3.png" ? 50 : 23;
+    var sodaO = new MemphisObject(randomXS, randomYS, 23, 50, sodaI);
+    var videoO = new MemphisObject(randomXV, randomYV, 117, 50, videoI);
+    var cuadroO = new MemphisObject(randomXC, randomYC, 50, 50, cuadroI);
+    arrMemphis.push(sodaO);
+    arrMemphis.push(videoO);
+    arrMemphis.push(cuadroO);
 }
 
 function drawMemphisObjects() {

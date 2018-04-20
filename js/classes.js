@@ -128,10 +128,10 @@ function OldieObject(x, y, width, image) {
 }
 
 //OBJETOS Chidos
-function MemphisObject(x, y, width, image) {
+function MemphisObject(x, y, width, height, image) {
     this.x = x;
     this.y = y;
-    this.height = 50;
+    this.height = height;
     this.width = width;
     this.img = new Image();
     this.img.src = image;
