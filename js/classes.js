@@ -20,21 +20,14 @@ function Board(image) {
 
     this.draw = function() {
         this.move();
-        ctx.beginPath();
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
         ctx.drawImage(this.img, this.x + canvas.width, this.y, this.width, this.height);
-        ctx.closePath();
     }
 }
 
 
 //COOLNESS
 function Coolness() {
-    this.x = 0;
-    this.y = 0;
-    this.width = canvas.width;
-    this.height = canvas.height;
-
     this.draw = function() {
         this.coolnessEscrito = "Coolness : " + Math.floor(coolnessBar1);
         ctx.beginPath();
