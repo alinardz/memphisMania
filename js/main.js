@@ -1,23 +1,61 @@
-//GENERAR GAME OVER
-function game2() {
+function resultado1() {
     stop();
     coche1.width = 0;
-    if (siguiente === false) {
-        this.next.draw();
+    coche1.height = 0;
+    if (coolnessBar1 > 9) {
+        coche1Good.draw();
     }
-
+    if (coolnessBar1 < 1) {
+        coche1Bad.draw();
+    }
     //en 2 segundos, empieza otra vez el intervalo se updatea cada 60 fps
     setTimeout(function() {
         siguiente = true;
         intervalo = setInterval(function() {
+            this.turno2.draw();
             update();
         }, 1000 / 60); //60fps 
-    }, 2000);
+    }, 4000);
 
+
+    //set bg 2
     coche2.x = 10;
     coche2.y = 200;
     personaje2 = true;
 }
+
+
+function resultado2() {
+    stop();
+    coche2.width = 0;
+    coche2.height = 0;
+
+    setTimeout(function() {
+        if (coolnessBar1 > coolnessBar2) {
+            win1.draw();
+        }
+        if (coolnessBar1 < coolnessBar2) {
+            win2.draw();
+        }
+        if (coolnessBar1 === 0 && coolnessBar2 === 0) {
+            loseB.draw();
+        }
+        if (coolnessBar1 === 10 && coolnessBar2 === 10) {
+            winB.draw();
+        }
+
+    }, 4000);
+    if (coolnessBar2 > 9) {
+        coche2Good.draw();
+    }
+    if (coolnessBar2 < 1) {
+        coche2Bad.draw();
+    }
+
+}
+
+
+
 
 //DETIENE TODO
 function stop() {
@@ -29,16 +67,12 @@ function stop() {
 function update() {
     frames++;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    //boards, coolness y personajes
     board.draw();
     coche1.draw();
 
-    //personajes
-
+    //si es 2do turno dibuja al coche2
     if (personaje2 === true) {
         coche2.draw();
-        coche1.width = 0;
     }
 
 
@@ -82,15 +116,14 @@ function checkCollision() {
         if (coche1.isTouching(oldie)) {
             coolnessBar1 -= 1;
             arrOldies.splice(oindex, 1);
-
         }
     });
     if (coolnessBar1 <= 0 && siguiente === false) {
-        game2();
+        resultado1();
     }
 
-    if (coolnessBar1 >= 6 && siguiente === false) {
-        game2();
+    if (coolnessBar1 > 9 && siguiente === false) {
+        resultado1();
     }
 }
 
@@ -113,11 +146,12 @@ function checkCollision2() {
         }
     });
     if (coolnessBar2 <= 0) {
-        //end
-        final();
+        resultado2();
+    }
+    if (coolnessBar2 > 9) {
+        resultado2();
     }
 }
-
 
 //VERIFICA SI PERSONAJE 2 CHOCA CON OBJETOS BUENOS
 function checkCollisionMemphis2() {

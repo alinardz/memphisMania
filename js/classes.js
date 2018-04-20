@@ -141,7 +141,7 @@ function MemphisObject(x, y, width, image) {
     }
 }
 
-function Next() {
+function Turno2() {
     this.x = 0;
     this.y = 0;
     this.height = canvas.height;
@@ -151,5 +151,120 @@ function Next() {
     this.draw = function() {
         this.x--;
         ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+    }
+}
+
+function Coche1Good() {
+    this.x = 0;
+    this.y = 0;
+    this.height = canvas.height;
+    this.width = canvas.width;
+    this.img = new Image();
+    this.img.src = "assets/1good.png";
+    this.draw = function() {
+        ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+    }
+}
+
+function Coche1Bad() {
+    this.x = 0;
+    this.y = 0;
+    this.height = canvas.height;
+    this.width = canvas.width;
+    this.img = new Image();
+    this.img.src = "assets/1bad.png";
+    this.draw = function() {
+        ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+    }
+}
+
+
+function Coche2Good() {
+    this.x = 0;
+    this.y = 0;
+    this.height = canvas.height;
+    this.width = canvas.width;
+    this.img = new Image();
+    this.img.src = "assets/2good.png";
+    this.draw = function() {
+        ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+    }
+}
+
+function Coche2Bad() {
+    this.x = 0;
+    this.y = 0;
+    this.height = canvas.height;
+    this.width = canvas.width;
+    this.img = new Image();
+    this.img.src = "assets/2bad.png";
+    this.draw = function() {
+        ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+    }
+}
+
+function Win1() {
+    this.x = 0;
+    this.y = 0;
+    this.height = canvas.height;
+    this.width = canvas.width;
+    this.img = new Image();
+    this.img.src = "assets/1win.png";
+    this.draw = function() {
+        ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+    }
+}
+
+function Win2() {
+    this.x = 0;
+    this.y = 0;
+    this.height = canvas.height;
+    this.width = canvas.width;
+    this.img = new Image();
+    this.img.src = "assets/2win.png";
+    this.draw = function() {
+        ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+    }
+}
+
+function WinB() {
+    this.x = 0;
+    this.y = 0;
+    this.height = canvas.height;
+    this.width = canvas.width;
+    this.img = new Image();
+    this.img.src = "assets/12win.png";
+    this.draw = function() {
+        ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+    }
+}
+
+
+function LoseB() {
+    this.x = 0;
+    this.y = 0;
+    this.height = canvas.height;
+    this.width = canvas.width;
+    this.img = new Image();
+    this.img.src = "assets/12lose.png";
+    this.draw = function() {
+        ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+    }
+}
+
+
+function ResultadoFinal() {
+    // stop();
+    if (coolnessBar1 > coolnessBar2) {
+        win1.draw();
+    }
+    if (coolnessBar1 < coolnessBar2) {
+        win2.draw();
+    }
+    if (coolnessBar1 === 0 && coolnessBar2 === 0) {
+        loseB.draw();
+    }
+    if (coolnessBar1 === 10 && coolnessBar2 === 10) {
+        winB.draw();
     }
 }

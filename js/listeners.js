@@ -3,7 +3,7 @@ const logo = document.getElementById("logo");
 button.addEventListener("click", function() {
     startGame();
     button.classList.toggle("restart-button");
-    button.textContent = "Restart";
+    button.textContent = "Coooool!";
 }, { once: true });
 
 button.addEventListener("mouseover", function() {

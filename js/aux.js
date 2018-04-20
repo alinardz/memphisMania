@@ -9,7 +9,7 @@ buttonColor();
 
 //GENERAR OBJETOS MALOS
 function generateObjects() {
-    if (!(frames % 300 === 0)) return;
+    if (!(frames % 100 === 0)) return;
     var randomX = Math.floor(Math.random() * 200) + 600;
     var randomY = Math.floor(Math.random() * 200) + 40;
     var image = oldies[Math.floor(Math.random() * oldies.length)];
@@ -45,7 +45,7 @@ function checkJumping() {
 
 //GENERAR OBJETOS BUENOS
 function generateMemphisObject() {
-    if (!(frames % 300 === 0)) return;
+    if (!(frames % 150 === 0)) return;
     var randomX = Math.floor(Math.random() * 200) + 900;
     var randomY = Math.floor(Math.random() * 200) + 10;
     var image = memphis[Math.floor(Math.random() * memphis.length)];
@@ -59,10 +59,3 @@ function drawMemphisObjects() {
         memphisObject.draw();
     });
 }
-
-/* function checkCollisionMemphis() {
-    arrMemphis(function(object) {
-        if (coche1.isTouching(object))
-            console.log("chocando con un memphis, mis puntos son: " + coolnessBar1)
-    });
-} */

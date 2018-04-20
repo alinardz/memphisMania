@@ -17,7 +17,15 @@ var coolnessImg = ["assets/coolness9.png", "assets/coolness8.png", "assets/cooln
 //...pantallas
 var board = new Board();
 
-var next = new Next;
+var turno2 = new Turno2;
+var coche1Good = new Coche1Good;
+var coche1Bad = new Coche1Bad;
+var coche2Good = new Coche2Good;
+var coche2Bad = new Coche2Bad;
+var win1 = new Win1;
+var win2 = new Win2;
+var winB = new WinB;
+var loseB = new LoseB;
 
 //...personajes
 var coche1 = new Coche("assets/coche1.png");
@@ -35,6 +43,7 @@ var arrMemphis = [];
 //BOOLEANS
 var isBlue = false;
 var personaje2 = false;
+var personaje1 = true;
 var isJumping = false;
 var siguiente = false;
 
@@ -53,4 +62,4 @@ setTimeout(() => {
 musica = new Audio()
 musica.src = audio[0]
 musica.loop = true;
-//musica.play();
+musica.play();
