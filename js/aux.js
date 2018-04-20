@@ -7,15 +7,12 @@ function buttonColor() {
 
 buttonColor();
 
-
-
-//GENERAR OBJETOS OLDIES
+//GENERAR OBJETOS MALOS
 function generateObjects() {
     if (!(frames % 300 === 0)) return;
-    var randomX = Math.floor(Math.random() * 200) + 900;
-    var randomY = Math.floor(Math.random() * 200) + 10;
+    var randomX = Math.floor(Math.random() * 200) + 600;
+    var randomY = Math.floor(Math.random() * 200) + 40;
     var image = oldies[Math.floor(Math.random() * oldies.length)];
-    //var width = (image === "assets/objects/oldie1.png" ? 145 : 145)(image === "assets/objects/oldie2.png" ? 100 : 100)(image === "assets/objects/oldie3.png" ? 50 : 50);
 
     var width = image === "assets/objects/oldie1.png" ? 145 : "assets/objects/oldie2.png" ? 100 : "assets/objects/oldie3.png" ? 50 : 50;
 
@@ -29,12 +26,6 @@ function drawObjects() {
     });
 }
 
-function checkCollision() {
-    arrOldies.forEach(function(object) {
-        if (coche1.isTouching(object))
-            console.log("chocando con un oldie, mis puntos son: " + coolnessBar1)
-    });
-}
 
 function checkJumping() {
     if (coche1.y >= 200) {
@@ -43,9 +34,16 @@ function checkJumping() {
     if (isJumping) {
         coche1.y += 1.5;
     }
+
+    if (coche2.y >= 200) {
+        isJumping = false;
+    }
+    if (isJumping) {
+        coche2.y += 1.5;
+    }
 }
 
-//GENERAR OBJETOS MEMPHIS
+//GENERAR OBJETOS BUENOS
 function generateMemphisObject() {
     if (!(frames % 300 === 0)) return;
     var randomX = Math.floor(Math.random() * 200) + 900;
@@ -62,10 +60,10 @@ function drawMemphisObjects() {
     });
 }
 
-function checkCollisionMemphis() {
+/* function checkCollisionMemphis() {
     arrMemphis(function(object) {
         if (coche1.isTouching(object))
             console.log("chocando con un memphis, mis puntos son: " + coolnessBar1)
     });
 
-}
+} */
