@@ -65,5 +65,4 @@ function drawMemphisObjects() {
         if (coche1.isTouching(object))
             console.log("chocando con un memphis, mis puntos son: " + coolnessBar1)
     });
-
 } */

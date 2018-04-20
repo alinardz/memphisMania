@@ -1,12 +1,17 @@
 const button = document.getElementById("start-button");
+const logo = document.getElementById("logo");
 button.addEventListener("click", function() {
     startGame();
-    //button.classList.toggle("restart-button");
-    //button.textContent = "Restart";
+    button.classList.toggle("restart-button");
+    button.textContent = "Restart";
 }, { once: true });
 
 button.addEventListener("mouseover", function() {
     button.classList.toggle("hover-button");
+});
+
+logo.addEventListener("mouseover", function() {
+    logo.classList.toggle("hover-logo");
 });
 
 button.addEventListener("mouseout", function() {

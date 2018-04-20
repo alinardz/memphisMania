@@ -5,29 +5,24 @@ function game2() {
     if (siguiente === false) {
         this.next.draw();
     }
+
+    //en 2 segundos, empieza otra vez el intervalo se updatea cada 60 fps
     setTimeout(function() {
         siguiente = true;
         intervalo = setInterval(function() {
             update();
         }, 1000 / 60); //60fps 
     }, 2000);
-    coche2.x = 0;
+
+    coche2.x = 10;
     coche2.y = 200;
     personaje2 = true;
-}
-
-function final() {
-    stop();
-    next.draw();
-    //dibujar score final
-    //drawFinalScore();
 }
 
 //DETIENE TODO
 function stop() {
     clearInterval(intervalo);
     intervalo = 0;
-    //board.music.pause();
 }
 
 //AQUI VA TODO LO QUE SE ACTUALIZA
@@ -37,11 +32,9 @@ function update() {
 
     //boards, coolness y personajes
     board.draw();
+    coche1.draw();
 
     //personajes
-    if (personaje1 === true) {
-        coche1.draw();
-    }
 
     if (personaje2 === true) {
         coche2.draw();
@@ -50,7 +43,8 @@ function update() {
 
 
     //score
-    coolness.draw();
+    coolness1.draw();
+    coolness2.draw();
 
     //objetos
     generateObjects();
@@ -72,18 +66,13 @@ function startGame() {
     intervalo = setInterval(function() {
         update();
     }, 1000 / 60); //60fps 
-    //HAZ UNA FUNCIÓN APARTE PARA RESETEAR TODO******
-    //coche1.y = 200;
-    //chance no es necesario
     arrOldies = [];
     arrMemphis = [];
 
     frames = 0;
-    coolnessBar1 = 6;
-    coolnessBar2 = 6;
-    //board.music.play();
+    coolnessBar1 = 5;
+    coolnessBar2 = 5;
 
-    //movemos la interface
     moveInfo();
 }
 
@@ -91,12 +80,16 @@ function startGame() {
 function checkCollision() {
     arrOldies.forEach(function(oldie, oindex) {
         if (coche1.isTouching(oldie)) {
-            coolnessBar1 -= 2;
+            coolnessBar1 -= 1;
             arrOldies.splice(oindex, 1);
+
         }
     });
     if (coolnessBar1 <= 0 && siguiente === false) {
-        personaje1 = false;
+        game2();
+    }
+
+    if (coolnessBar1 >= 6 && siguiente === false) {
         game2();
     }
 }
@@ -107,7 +100,6 @@ function checkCollisionMemphis() {
         if (coche1.isTouching(memphis)) {
             coolnessBar1 += 1;
             arrMemphis.splice(mindex, 1);
-            console.log("coche 1 toco un memphis")
         }
     });
 }
@@ -118,7 +110,6 @@ function checkCollision2() {
         if (coche2.isTouching(oldie)) {
             coolnessBar2 -= 2;
             arrOldies.splice(oindex, 1);
-            console.log("coche 2 toco un malo")
         }
     });
     if (coolnessBar2 <= 0) {
@@ -134,7 +125,6 @@ function checkCollisionMemphis2() {
         if (coche2.isTouching(memphis)) {
             coolnessBar2 += 1;
             arrMemphis.splice(mindex, 1);
-            console.log("coche 2 toco un memphis")
         }
     });
 }
@@ -142,6 +132,8 @@ function checkCollisionMemphis2() {
 //MOVER LOGO Y BOTÓN
 function moveInfo() {
     var info = document.getElementById("info");
+    var logo = document.getElementById("logo");
     info.style.transition = "all 1s ease";
     info.style.transform = "translateY(-300px)";
+    logo.style.transform = "scale(.7)";
 }

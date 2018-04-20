@@ -22,7 +22,7 @@ body {
 .boton {
     position: absolute;
     width: 40%;
-    padding: 110px 700px;
+    padding: 190px 700px;
     z-index: 1;
 }
 
@@ -51,6 +51,10 @@ button {
     font-size: 40px;
 }
 
+.hover-logo {
+    width: 37%;
+}
+
 .color-button {
     background-color: #6d9eff;
 }
@@ -69,6 +73,6 @@ button:focus {
 /*CANVAS*/
 
 .container {
-    margin: 130px auto;
+    margin: 190px auto;
     max-width: 700px;
 }
